@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FormaCobro" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="monto" class="java.lang.String"/>
+	<parameter name="desc" class="java.lang.String"/>
+	<parameter name="caja" class="java.lang.String"/>
+	<parameter name="idFac" class="java.lang.String"/>
+	<parameter name="desFac" class="java.lang.String"/>
+	<parameter name="forCob" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cobros.`idcobros` AS cobros_idcobros,
+     cobros.`Fecha` AS cobros_Fecha,
+     cobros.`Monto` AS cobros_Monto,
+     cobros.`Descripcion` AS cobros_Descripcion,
+     cobros.`idAperturaCaja` AS cobros_idAperturaCaja,
+     cobros.`NroFacturaVentas` AS cobros_NroFacturaVentas,
+     cobros.`idformasCobro` AS cobros_idformasCobro
+FROM
+     `cobros` cobros]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="51"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Formas de Cobro]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="0" width="62" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nro Orden]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="96" y="0" width="73" height="34"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{CODIGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="186" y="0" width="41" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Monto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="227" y="0" width="112" height="34"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="0" width="104" height="34"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{desc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="356" y="0" width="66" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Descripcion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="41" width="100" height="34"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{caja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="34" y="41" width="36" height="34"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Caja:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="41" width="52" height="34"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Factura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="41" width="6" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="221" y="41" width="24" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{idFac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="44" width="83" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{desFac}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="334" y="41" width="70" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Forma Cobro:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="404" y="44" width="122" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{forCob}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

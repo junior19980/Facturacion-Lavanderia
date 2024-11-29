@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Proveedores" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vproveedor.`idProveedor` ,
+     vproveedor.`nombre_RS` ,
+     vproveedor.`ci_RUC` ,
+     vproveedor.`telefono` ,
+     vproveedor.`email` ,
+     vproveedor.`paginaweb` ,
+     vproveedor.`Descripcion`,
+     vproveedor.`Ciudad`
+FROM
+     `vproveedor` vproveedor]]>
+	</queryString>
+	<field name="idProveedor" class="java.lang.Integer"/>
+	<field name="nombre_RS" class="java.lang.String"/>
+	<field name="ci_RUC" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.Integer"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="paginaweb" class="java.lang.String"/>
+	<field name="Descripcion" class="java.lang.String"/>
+	<field name="Ciudad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="22" width="308" height="57"/>
+				<textElement textAlignment="Justified">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe Proveedor]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[idProveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[nombre_RS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ci_RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[paginaweb]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barrio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre_RS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ci_RUC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{paginaweb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="0" width="86" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Ciudad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

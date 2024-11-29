@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NDV" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     notasdebitosservicios.`idNotaDebitoServicio` ,
+     notasdebitosservicios.`` ,
+     notasdebitosservicios.`fecha` ,
+     notasdebitosservicios.`total` ,
+     notasdebitosservicios.`idFacturaServicio`,
+     notasdebitosservicios.`iva`
+FROM
+     `notasdebitosservicios` notasdebitosservicios]]>
+	</queryString>
+	<field name="idNotaDebitoServicio" class="java.lang.Integer"/>
+	<field name="" class="java.lang.Integer"/>
+	<field name="fecha" class="java.sql.Date"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="idFacturaServicio" class="java.lang.Integer"/>
+	<field name="iva" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="138" y="36" width="301" height="43"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe Nota Debito]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="102" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[idNotaDebitoServicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="0" width="102" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="0" width="102" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="102" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="0" width="102" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[iva]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="0" width="102" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[idFacturaServicio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="92" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idNotaDebitoServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="0" width="92" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="48" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="92" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="0" width="92" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idFacturaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="0" width="92" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{iva}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="418" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

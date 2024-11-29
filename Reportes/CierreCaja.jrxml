@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CierreCaja" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cierrescajas.`idAperturaCaja` ,
+     cierrescajas.`hora` ,
+     cierrescajas.`montoCierre` ,
+     cierrescajas.`fecha`
+FROM
+     `cierrescajas` cierrescajas]]>
+	</queryString>
+	<field name="idAperturaCaja" class="java.lang.Integer"/>
+	<field name="hora" class="java.sql.Time"/>
+	<field name="montoCierre" class="java.lang.Double"/>
+	<field name="fecha" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="128" y="25" width="301" height="43"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe Cierre Caja]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="5" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[idAperturaCaja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="106" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="0" width="49" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="0" width="138" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[montoCierre]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idAperturaCaja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="106" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{montoCierre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="0" width="49" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

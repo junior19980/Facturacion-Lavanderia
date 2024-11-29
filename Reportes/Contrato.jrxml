@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Contrato" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="192"/>
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="codUsu" class="java.lang.String"/>
+	<parameter name="nomUsu" class="java.lang.String"/>
+	<parameter name="caducacion" class="java.lang.String"/>
+	<parameter name="tieGara" class="java.lang.String"/>
+	<parameter name="Obser" class="java.lang.String"/>
+	<parameter name="codSer" class="java.lang.String"/>
+	<parameter name="codCli" class="java.lang.String"/>
+	<parameter name="nomCli" class="java.lang.String"/>
+	<parameter name="codItem" class="java.lang.String"/>
+	<parameter name="desItem" class="java.lang.String"/>
+	<parameter name="preItem" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     *
+FROM
+     `promociones` promociones]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="61"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contratos y Garantias]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="156" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="15" width="68" height="26"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Nro Registro:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="14" width="49" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{CODIGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="14" width="50" height="26"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Usuario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="13" width="22" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{codUsu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="13" width="7" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="13" width="7" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="13" width="43" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomUsu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="65" width="61" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Caducacion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="65" width="83" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{caducacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="113" width="7" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="65" width="68" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Observacion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="233" y="65" width="264" height="26"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Obser}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="442" y="13" width="7" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="113" width="7" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="13" width="92" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Orden Servicio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="363" y="13" width="34" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{codSer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="13" width="38" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{codCli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="12" width="84" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomCli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="113" width="40" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Items:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="113" width="90" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Tiempo Garantia:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="113" width="37" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{tieGara}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="113" width="26" height="26"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[dias]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="113" width="30" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{codItem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="113" width="133" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{desItem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="114" width="100" height="26"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{preItem}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

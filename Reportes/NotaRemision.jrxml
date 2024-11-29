@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NotaRemision" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.1000000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="177"/>
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="idCli" class="java.lang.String"/>
+	<parameter name="nomCli" class="java.lang.String"/>
+	<parameter name="rucCli" class="java.lang.String"/>
+	<parameter name="Obser" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     notasremisiones.`idNotaRemision` AS notasremisiones_idNotaRemision,
+     notasremisiones.`idCliente` AS notasremisiones_idCliente,
+     notasremisiones.`fecha` AS notasremisiones_fecha,
+     notasremisiones.`Observacion` AS notasremisiones_Observacion
+FROM
+     `notasremisiones` notasremisiones]]>
+	</queryString>
+	<field name="CODIGO" class="java.lang.String"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<field name="CANTIDAD" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nota Remision]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="60" width="70" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observacion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="14" width="120" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nro de Nota Remision:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="14" width="62" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="60" width="443" height="29"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Obser}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="239" y="14" width="42" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="281" y="14" width="25" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{idCli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="14" width="12" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="14" width="12" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="318" y="14" width="64" height="29"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomCli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="14" width="61" height="29"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{rucCli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="185" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="12" width="185" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="12" width="185" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="370" y="6" width="1" height="25"/>
+			</line>
+			<line>
+				<reportElement x="0" y="6" width="1" height="26"/>
+			</line>
+			<line>
+				<reportElement x="1" y="5" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="185" y="6" width="1" height="27"/>
+			</line>
+			<line>
+				<reportElement x="554" y="4" width="1" height="27"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CODIGO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="434" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="514" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

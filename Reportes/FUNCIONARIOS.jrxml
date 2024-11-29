@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Funcionarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vfuncionario.`idFuncionario` ,
+     vfuncionario.`nomFuncionario`,
+     vfuncionario.`apeFuncionario` ,
+     vfuncionario.`CI`,
+     vfuncionario.`telefono` ,
+     vfuncionario.`direccion`,
+     vfuncionario.`email` ,
+     vfuncionario.`salario` ,
+     vfuncionario.`Cargo` ,
+     vfuncionario.`Barrio`,
+     vfuncionario.`Usuario`
+FROM
+     `vfuncionario` vfuncionario]]>
+	</queryString>
+	<field name="idFuncionario" class="java.lang.Integer"/>
+	<field name="nomFuncionario" class="java.lang.String"/>
+	<field name="apeFuncionario" class="java.lang.String"/>
+	<field name="CI" class="java.lang.Integer"/>
+	<field name="telefono" class="java.lang.Integer"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="salario" class="java.lang.Double"/>
+	<field name="Cargo" class="java.lang.String"/>
+	<field name="Barrio" class="java.lang.String"/>
+	<field name="Usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="170" y="22" width="308" height="57"/>
+				<textElement textAlignment="Justified">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe Funcionario]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="8" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[idFuncionario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[nomFuncionario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[apeFuncionario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[CI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[salario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="50" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cargo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="82" height="20"/>
+				<textElement/>
+				<text><![CDATA[Barrio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="522" y="0" width="43" height="20"/>
+				<textElement/>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nomFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{apeFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{salario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Cargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="72" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Barrio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="522" y="0" width="33" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Usuario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

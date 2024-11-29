@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RemisionCompra" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cod" class="java.lang.String"/>
+	<parameter name="idUsu" class="java.lang.String"/>
+	<parameter name="nomUsu" class="java.lang.String"/>
+	<parameter name="idSucu" class="java.lang.String"/>
+	<parameter name="nomSucu" class="java.lang.String"/>
+	<parameter name="direPar" class="java.lang.String"/>
+	<parameter name="direLle" class="java.lang.String"/>
+	<parameter name="moti" class="java.lang.String"/>
+	<parameter name="idFac" class="java.lang.String"/>
+	<parameter name="desFac" class="java.lang.String"/>
+	<parameter name="idProv" class="java.lang.String"/>
+	<parameter name="nomProv" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     remisionescompra.`idNotaRemision` AS remisionescompra_idNotaRemision,
+     remisionescompra.`DireccionPartida` AS remisionescompra_DireccionPartida,
+     remisionescompra.`DireccionLLegada` AS remisionescompra_DireccionLLegada,
+     remisionescompra.`Fecha` AS remisionescompra_Fecha,
+     remisionescompra.`Motivo` AS remisionescompra_Motivo,
+     remisionescompra.`Estado` AS remisionescompra_Estado,
+     remisionescompra.`idSucursal` AS remisionescompra_idSucursal,
+     remisionescompra.`idFacturaCompras` AS remisionescompra_idFacturaCompras,
+     remisionescompra.`idProveedores` AS remisionescompra_idProveedores
+FROM
+     `remisionescompra` remisionescompra]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="555" height="79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remision Compra]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="157" splitType="Stretch">
+			<staticText>
+				<reportElement x="268" y="115" width="14" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="19" width="80" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nro Remison:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="19" width="69" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{cod}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="192" y="19" width="40" height="34"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="232" y="19" width="22" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{idUsu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="254" y="19" width="14" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="268" y="19" width="62" height="34"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomUsu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="353" y="19" width="46" height="34"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Sucursal:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="399" y="19" width="24" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{idSucu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="423" y="19" width="14" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="19" width="100" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomSucu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="72" width="92" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Direccion partida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="72" width="154" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{direPar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="268" y="72" width="92" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direccion partida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="72" width="177" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{direLle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="115" width="51" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motivo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="115" width="82" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{moti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="115" width="89" height="31"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Factura Compra:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="244" y="115" width="24" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{idFac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="115" width="71" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{desFac}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="353" y="115" width="59" height="31"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Proveedor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="115" width="22" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{idProv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="437" y="115" width="14" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="451" y="115" width="86" height="31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomProv}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

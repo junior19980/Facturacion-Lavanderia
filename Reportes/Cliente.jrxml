@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cliente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vclientes.`idCliente` ,
+     vclientes.`nombre_RS`,
+     vclientes.`CI_RUC` ,
+     vclientes.`telefono` ,
+     vclientes.`Direccion` ,
+     vclientes.`Email`,
+     vclientes.`Descripcion`,
+     vclientes.`Ciudad`
+FROM
+     `vclientes` vclientes]]>
+	</queryString>
+	<field name="idCliente" class="java.lang.Integer"/>
+	<field name="nombre_RS" class="java.lang.String"/>
+	<field name="CI_RUC" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String"/>
+	<field name="Email" class="java.lang.String"/>
+	<field name="Descripcion" class="java.lang.String"/>
+	<field name="Ciudad" class="java.lang.String"/>
+	<group name="idCliente">
+		<groupExpression><![CDATA[$F{idCliente}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="157" y="22" width="308" height="57"/>
+				<textElement textAlignment="Justified">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe Cliente]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[idCliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre_RS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CI_RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Barrio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="0" width="69" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre_RS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CI_RUC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Ciudad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

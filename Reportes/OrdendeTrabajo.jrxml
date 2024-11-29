@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdendeTrabajo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     `vodenesserviciosrealizados`.`idOrdenTrabajo`,
+     `vodenesserviciosrealizados`.`idServicio`,
+     `vodenesserviciosrealizados`.`cantidad`,
+     `vodenesserviciosrealizados`.`servicio`,
+     `vodenesserviciosrealizados`.`precio`,
+
+     `vodenesserviciosrealizados`.`nombre_RS`,
+     `vodenesserviciosrealizados`.`CI_RUC`
+FROM
+     `vodenesserviciosrealizados`
+ORDER BY
+     vodenesserviciosrealizados.`idOrdenTrabajo` ASC]]>
+	</queryString>
+	<field name="idOrdenTrabajo" class="java.lang.Integer"/>
+	<field name="idServicio" class="java.lang.Integer"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<field name="servicio" class="java.lang.String"/>
+	<field name="precio" class="java.lang.Double"/>
+	<field name="nombre_RS" class="java.lang.String"/>
+	<field name="CI_RUC" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="117" y="23" width="311" height="43"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe Orden de Trabajo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[idTrabajo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="0" width="64" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="0" width="65" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CI_RUC]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="0" width="552" height="20" backcolor="#66FF66"/>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idOrdenTrabajo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="17" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="0" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre_RS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CI_RUC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="452" y="34" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

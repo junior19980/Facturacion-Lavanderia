@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FacturaC" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     facturascompras.`idFacturaCompra` ,
+     facturascompras.`nro_factura` ,
+     facturascompras.`fecha` ,
+     facturascompras.`Total` ,
+     facturascompras.`IVA`
+FROM
+     `facturascompras` facturascompras]]>
+	</queryString>
+	<field name="idFacturaCompra" class="java.lang.Integer"/>
+	<field name="nro_factura" class="java.lang.Integer"/>
+	<field name="fecha" class="java.sql.Date"/>
+	<field name="Total" class="java.lang.Double"/>
+	<field name="IVA" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="142" y="28" width="321" height="43"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe Factura Compra]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="8" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[idFacturaCompra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[nro_factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[IVA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idFacturaCompra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nro_factura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="47" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{IVA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

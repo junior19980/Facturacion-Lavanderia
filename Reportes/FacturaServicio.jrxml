@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FacturaServicio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2396694214876032"/>
+	<property name="ireport.x" value="57"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<parameter name="nomUsu" class="java.lang.String"/>
+	<parameter name="CLIENTE" class="java.lang.String"/>
+	<parameter name="CI" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="iva" class="java.lang.String"/>
+	<parameter name="timbrado" class="java.lang.String"/>
+	<parameter name="tipo" class="java.lang.String"/>
+	<parameter name="Fechav" class="java.lang.String"/>
+	<parameter name="Fechai" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     presupuestos.`idPresupuesto` AS presupuestos_idPresupuesto,
+     presupuestos.`Fecha` AS presupuestos_Fecha,
+     presupuestos.`idestado` AS presupuestos_idestado,
+     presupuestos.`idCliente` AS presupuestos_idCliente,
+     presupuestos.`idUsuario` AS presupuestos_idUsuario,
+     presupuestos.`idDiagnostico` AS presupuestos_idDiagnostico
+FROM
+     `presupuestos` presupuestos]]>
+	</queryString>
+	<field name="CODIGO" class="java.lang.String"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<field name="PRECIO" class="java.lang.String"/>
+	<field name="CANTIDAD" class="java.lang.String"/>
+	<field name="DESC PORCENTAJE" class="java.lang.String"/>
+	<field name="DESCUENTO" class="java.lang.String"/>
+	<field name="SUBTOTAL" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="181" splitType="Stretch">
+			<staticText>
+				<reportElement x="-47" y="-9" width="555" height="79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[FACTURA]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="99" y="77" width="164" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="104" width="43" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cajero:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="75" width="46" height="25"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="104" width="177" height="25"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomUsu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="136" width="45" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="49" y="141" width="214" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{CLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="142" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{CI}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="101" width="552" height="3"/>
+			</line>
+			<line>
+				<reportElement x="10" y="101" width="552" height="3"/>
+			</line>
+			<staticText>
+				<reportElement x="273" y="136" width="45" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="439" y="107" width="100" height="22"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{tipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="366" y="101" width="75" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Factura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="54" width="55" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Timbrado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="54" width="87" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nro Factura:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="366" y="79" width="62" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{timbrado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="33" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{Fechav}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="70" width="108" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Emision:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="362" y="34" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{Fechai}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="362" y="9" width="108" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="9" width="108" height="25"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Venc.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="13" width="84" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="13" width="138" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="13" width="49" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="13" width="72" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="13" width="108" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESC PORCENTAJE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="13" width="68" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCUENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="508" y="13" width="100" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="552" height="3"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="199" y="5" width="76" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{PRECIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="5" width="48" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="3" width="59" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="5" width="160" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="5" width="75" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DESC PORCENTAJE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="5" width="78" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DESCUENTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="508" y="5" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SUBTOTAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="24" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="453" y="5" width="42" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="498" y="5" width="100" height="25"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="347" y="5" width="86" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{iva}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="303" y="5" width="42" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IVA:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ORDENESCOMPRAS" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vordenfacturacompra.`NroOrdenDeCompra` ,
+     vordenfacturacompra.`idInsumos` ,
+     vordenfacturacompra.`Cantidad`,
+     vordenfacturacompra.`PrecioCompra`,
+     vordenfacturacompra.`Descripcion`,
+     vordenfacturacompra.`idProveedor`,
+     vordenfacturacompra.`Nombre` ,
+     vordenfacturacompra.`Ruc`
+FROM
+     `vordenfacturacompra` vordenfacturacompra]]>
+	</queryString>
+	<field name="NroOrdenDeCompra" class="java.lang.Integer"/>
+	<field name="idInsumos" class="java.lang.Long"/>
+	<field name="Cantidad" class="java.lang.Integer"/>
+	<field name="PrecioCompra" class="java.lang.Double"/>
+	<field name="Descripcion" class="java.lang.String"/>
+	<field name="idProveedor" class="java.lang.Integer"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="Ruc" class="java.lang.String"/>
+	<group name="NroOrdenDeCompra">
+		<groupExpression><![CDATA[$F{NroOrdenDeCompra}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="109" y="29" width="408" height="50"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEN DE COMPRA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="9" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[NroOrdenDeCompra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[idInsumos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[PrecioCompra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[idProveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[Ruc]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{NroOrdenDeCompra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idInsumos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{PrecioCompra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="0" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Ruc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
